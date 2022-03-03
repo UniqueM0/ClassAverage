@@ -22,12 +22,24 @@ output = accumulator / total score
 print output
 """
 
-scores = [100, 80, 90, 70, 50, 95] #input
-iterator = 0 
-accumulator = 0
-student_count = len(scores)
-print("length is:", len(scores))
+def calculate_average(scores):    
+    # scores = [100, 80, 90, 70, 50, 95]  # input
+    iterator = 0
+    accumulator = 0
+    student_count = len(scores)
+    print("length is:", len(scores))
 
-while iterator < len(scores): 
-    print("within while loop iterator: ", iterator)
-    iterator = iterator + 1 
+    while iterator < len(scores):
+        # print("within while loop iterator: ", iterator)
+        print(f"item at index {iterator} is: ", scores[iterator])
+        accumulator = accumulator + scores[iterator]
+        iterator = iterator + 1
+
+    print("sum is: ", accumulator)
+    average = accumulator / student_count
+    # print("The average of total scores in the class is: ", average)
+    return average
+
+output = calculate_average([100,80,90,70,50,95])
+
+print("The average of total scores in the class is: ", output)
